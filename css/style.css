@@ -1,0 +1,397 @@
+/*
+Description: Contains the styling for Site Branding
+Author: Iam Good Student
+Email: iamgood@student.curtin.edu
+Tags: Website, Branding, Colour Palette
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* Global Variables */
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --black: #141414;
+    --background-1: #1e1e1e;
+    --background-2: #525355;
+    --background-3: #333333;
+}
+
+body {
+    background-color: var(--white);
+}
+
+.side-navbar {
+    display: flex;
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 15px 25px;
+    background-color: var(--background-1);
+    flex-direction: column;
+    justify-content: space-around;
+    transition-duration: 0.5s;
+    z-index: 10;
+}
+
+header .profile {
+    text-align: center;
+    margin: 30px 10px 30px 10px;
+}
+
+header .profile img {
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--blue);
+}
+
+header .profile h1 {
+    color: #fff;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+header .profile .social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    background-color: var(--background-2);
+    color: #fff;
+    line-height: 42px;
+    margin: 0 5px;
+}
+
+header .profile .social-links a:hover {
+    background-color: var(--blue);
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    display: flex;
+    padding: 10px 10px;
+    margin: 15px 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+header nav ul li a:hover {
+    background: #363636;
+    border-radius: 4px;
+}
+
+.active {
+    background: #363636;
+    border-radius: 4px;
+}
+
+header nav ul li a div i {
+    margin-right: 15px;
+}
+
+#btn-toggle {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+    color: var(--black);
+    z-index: 100;
+}
+
+#btn-mod {
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    right: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .side-navbar {
+        left: -300px;
+    }
+
+    #btn-toggle {
+        display: block;
+    }
+}
+
+footer {
+    color: #858484;
+}
+
+.mobile-nav-open .side-navbar {
+    left: 0;
+}
+
+main {
+    margin-left: 300px;
+    transition: 0.5s;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+@media only screen and (max-width: 1050px) {
+    main {
+        margin-left: 0;
+    }
+
+    section {
+        padding: 25px !important;
+    }
+}
+
+
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+section .row h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+    color: var(--black);
+}
+
+section .row h4 span {
+    color: var(--blue);
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+section .row h2 {
+    color: var(--black);
+    font-size: 3em;
+    line-height: 1em;
+}
+
+section .row p {
+    color: var(--black);
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+.auto-input {
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    margin-top: 10px !important;
+    color: var(--black) !important;
+}
+
+.btn-download {
+    padding: 15px 30px;
+    border: none;
+    margin-top: 15px;
+    background: #1e90ff;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+.skills-bar {
+    padding: 25px 0;
+}
+
+.skills-bar-group {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.skills-bar .bar {
+    width: 100%;
+    padding: 10px 15px 10px 0px;
+}
+
+.skills-bar .bar .info span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.skills-bar .bar .info {
+    margin-bottom: 8px;
+    color: var(--black);
+}
+
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.bar .progress-line span {
+    position: absolute;
+    background: var(--blue);
+    height: 100%;
+    border-radius: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress-line .html {
+    width: 70%;
+}
+
+.progress-line .softskill {
+    width: 80%;
+}
+
+.progress-line .c {
+    width: 70%;
+}
+
+.progress-line .python {
+    width: 80%;
+}
+
+.progress-line .javascript {
+    width: 60%;
+}
+
+.line {
+    padding: 10px 0 5px 30px;
+    border-left: 3px solid #1e90ff;
+    margin-top: 15px;
+}
+
+.line p {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #1e90ff;
+    margin: 20px 0;
+    position: relative;
+}
+
+.line p:before {
+    content: '';
+    position: absolute;
+    left: -41px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #2196F3;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.line p:after {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 7px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #1e90ff;
+}
+
+.project-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tec-list {
+    font-weight: bold;
+}
+
+.tec-list a {
+    color: var(--black);
+}
+
+.project a {
+    text-decoration: none;
+}
+
+.project h2:hover {
+    color: var(--blue) !important;
+}
+
+.tec-list span {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.project-box img {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 600px;
+    padding-top: 20px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 2px solid #969696;
+}
+
+.contact-box .btn-send {
+    border: none;
+    background: #0081ff;
+    padding: 15px;
+    color: #fff;
+    font-size: 18px;
+    width: 200px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn-send:hover {
+    background-color: #1e1e1e;
+}
